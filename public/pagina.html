@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Contador de Visitas</title>
+</head>
+
+<body>
+    <button onclick="fnRegistrarVisita()" id="btnRegistrar">Registrar Visita</button>
+</body>
+<script>
+    const fnRegistrarVisita = () => {
+        const elem = document.getElementById("btnRegistrar");
+        elem.disabled = true;
+        fetch('/').then(function(response) {
+                // console.log(response);
+                elem.disabled = false;
+            })
+            .catch(function(error) {
+                console.error(error);
+                elem.disabled = false;
+            });
+    }
+</script>
+
+</html>
